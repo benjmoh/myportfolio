@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content Type" content="text/html; charset=utf-8">
+<title>My Portfolio</title>
+<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+
+<body>
+    <header>
+        <h2>Benjamin Mohaci</h2>
+    </header>
+    <nav>
+        <a id="home" href="./index.html">Home</a>
+        <a id="contact" href="./contact.html">Contact</a>
+    </nav>
+    <section>
+        <aside>
+            <h2>About Me</h2>
+            <p>
+            Hi! I am Benjamin Mohaci and I am an upcoming software developer!
+            I am currently enrolled in the Full Stack Engineer Career Path at Codecademy
+            and I am starting an Msc in Computer Science with Artificial Intelligence in September.
+            I would like to be a software developer whilst I undergo my postgraduate studies to build experience
+            as a developer within the industry.
+            </p>
+            <p>
+            In my spare time I like to watch videos about Physics, AI and mathematical advancements. 
+            I also enjoy playing Chess and Tennis.
+            </p>
+            <p> Quick fact! I've been alive for
+                <span id="time-container">0</span>
+                seconds!
+            </p>
+        </aside>
+        <aside>
+            <img src="me.jpeg">
+        </aside>
+    </section>
+    <footer>
+        
+        
+    </footer>
+    <script>
+        
+    const timeContainer = document.getElementById("time-container");
+    const BIRTH_DAY = "07-02-2001";
+    const BIRTH_DAY_DATE = new Date(BIRTH_DAY);
+    const intlNumberFormatter = new Intl.NumberFormat("en-US");
+
+    setInterval(() => {
+      const now = new Date();
+      const difference = Math.floor(
+        (now.getTime() - BIRTH_DAY_DATE.getTime()) / 1000
+      );
+
+      timeContainer.innerText = intlNumberFormatter.format(difference);
+    }, 1000);
+  
+    </script>
+</body>
+</html>
